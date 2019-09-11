@@ -9,6 +9,7 @@
     ></city-list>
     <city-alphabet
       :cities="cities"
+      @change="handleLetterChange"
     ></city-alphabet>
   </div>
 </template>

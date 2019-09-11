@@ -16,7 +16,6 @@
             class="button-wrapper"
             v-for="item of hot"
             :key="item.id"
-            @click="handleCityClick(item.name)"
           >
             <div class="button">{{item.name}}</div>
           </div>
@@ -34,7 +33,6 @@
             class="item border-bottom"
             v-for="innerItem of item"
             :key="innerItem.id"
-            @click="handleCityClick(innerItem.name)"
           >
             {{innerItem.name}}
           </div>
@@ -56,6 +54,14 @@ export default {
     },
     mounted () {
         this.scroll = new Bscroll(this.$refs.wrapper)
+    },
+    watch: {
+      letter() {
+        if (this.letter) {
+          const element = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(element)
+        }
+      }
     }
 }
 </script>
