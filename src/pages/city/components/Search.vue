@@ -14,6 +14,7 @@
           class="search-item border-bottom"
           v-for="item of list"
           :key="item.id"
+          @click="handleCityClick(item.name)"
         >
          {{item.name}}
         </li>
@@ -66,6 +67,15 @@ export default {
       this.list = result
       }, 100)
     }
+  },
+  methods: {
+    handleCityClick (city) {
+        // this.$store.commit('changeCity',city)
+        this.changeCity = city
+        //页面路由跳转
+        this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search)

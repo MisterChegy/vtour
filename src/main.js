@@ -7,6 +7,7 @@ import axios from 'axios';
 import ElementUI from 'element-ui';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+import store from './store'
 import 'swiper/dist/css/swiper.css'
 import 'element-ui/lib/theme-chalk/index.css';
 import 'styles/reset.css';
@@ -28,6 +29,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
