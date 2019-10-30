@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios';
 import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import store from './store'
@@ -24,6 +25,7 @@ if ('addEventListener' in document) {
   }, false);
 }
 Vue.use(VueAwesomeSwiper)
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({
